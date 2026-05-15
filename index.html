@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simranpreet Kaur - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2d3436;
-            --accent: #d63031; /* Subtle, sophisticated red */
-            --bg: #fcfcfc;
-            --text: #4a4a4a;
-            --soft-pink: #fdf2f2;
+            --primary-dark: #1c1c1c;
+            --accent-color: #b76e79; /* Rose Gold for an elegant, sophisticated touch */
+            --bg-color: #fcfbfa;
+            --surface-color: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --divider: #eaeaea;
         }
 
         * {
@@ -22,250 +24,352 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
         }
 
-        .resume-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: white;
-            padding: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--accent);
+        .resume-wrapper {
+            width: 100%;
+            max-width: 900px;
+            background: var(--surface-color);
+            padding: 70px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--divider);
         }
 
+        /* --- Symmetrical Header --- */
         header {
             text-align: center;
             margin-bottom: 50px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 25px auto 0;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--primary);
-            letter-spacing: 1px;
+            font-size: 3rem;
+            color: var(--primary-dark);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
-        .subtitle {
+        .designation {
             font-size: 1.1rem;
-            color: var(--accent);
+            color: var(--accent-color);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 600;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: '';
-            flex: 1;
-            margin-left: 20px;
-            height: 1px;
-            background: #eee;
-        }
-
-        .summary {
-            font-style: italic;
-            color: #666;
-            text-align: justify;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 25px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-
-        .role {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .company {
-            color: var(--accent);
+            letter-spacing: 4px;
             font-weight: 500;
         }
 
-        .date {
-            font-size: 0.85rem;
-            color: #888;
+        /* --- Symmetrical Summary --- */
+        .summary-section {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px auto;
         }
 
-        ul {
+        .summary-text {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* --- Section Titles --- */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- 50/50 Grid for Skills & Tools --- */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            padding: 35px;
+            background-color: #faf9f8;
+            border-radius: 4px;
+        }
+
+        .competencies-col h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 10px;
+        }
+
+        .skill-list {
             list-style: none;
         }
 
-        ul li {
+        .skill-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
             position: relative;
             padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+            color: var(--text-main);
         }
 
-        ul li::before {
-            content: "•";
-            color: var(--accent);
+        .skill-list li::before {
+            content: "◆";
+            color: var(--accent-color);
+            font-size: 0.6rem;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .skill-list strong {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* --- Experience Section --- */
+        .experience-section {
+            margin-bottom: 50px;
+        }
+
+        .job-card {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .job-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .job-company {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            margin-left: 10px;
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .job-details {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .job-details li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.7;
+        }
+
+        .job-details li::before {
+            content: "—";
+            color: var(--accent-color);
             position: absolute;
             left: 0;
             font-weight: bold;
         }
-        
-        .impact {
-            font-style: italic;
-            color: var(--primary);
-            margin-top: 5px;
+
+        .impact-statement {
+            margin-top: 15px;
+            padding: 15px 20px;
+            background-color: #faf9f8;
+            border-left: 3px solid var(--accent-color);
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        /* --- Symmetrical Education --- */
+        .education-section {
+            text-align: center;
+        }
+
+        .edu-degree {
+            font-size: 1.2rem;
             font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
         }
 
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        .edu-school {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
         }
 
-        .tag {
-            background: var(--soft-pink);
-            color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+        .edu-year {
+            font-size: 0.9rem;
+            color: var(--accent-color);
             font-weight: 500;
         }
 
         @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
+            .resume-wrapper {
+                padding: 40px 25px;
             }
-            .resume-container {
-                padding: 30px 20px;
+            .competencies-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+            .job-date {
+                margin-top: 5px;
+            }
+            h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
+<div class="resume-wrapper">
+    
     <header>
-        <h1>Simranpreet Kaur [cite: 1]</h1>
-        <div class="subtitle">Associate Project Manager [cite: 2]</div>
+        <h1>Simranpreet Kaur</h1>
+        <div class="designation">Associate Project Manager</div>
     </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p class="summary">
-            Results-driven Project Manager with over 4.5 years of experience overseeing the end-to-end software development lifecycle (SDLC) for both web and mobile platforms[cite: 5]. Expert in Agile/Scrum methodologies with a proven track record of bridging technical execution with business requirements[cite: 6, 7]. Adept at managing distributed teams, utilizing modern project management suites, and delivering predictable, high-quality solutions that drive client satisfaction across international markets[cite: 6, 7].
+    <div class="summary-section">
+        <p class="summary-text">
+            Results-driven Project Manager with 4.5+ years of experience directing the end-to-end software development lifecycle (SDLC) for complex web and mobile platforms. Expert in Agile/Scrum methodologies, specializing in bridging technical execution with strategic business goals. Proven ability to lead distributed teams, optimize resource allocation, and deliver predictable, high-quality solutions across international markets.
         </p>
-    </section>
-
-    <div class="grid">
-        <section>
-            <h2>Core Competencies</h2>
-            <ul>
-                <li><strong>Project Leadership:</strong> Strategic Planning, Milestone Tracking, Dependency Management, and Risk Mitigation[cite: 11].</li>
-                <li><strong>Agile Methodologies:</strong> Scrum, Sprint Planning, Daily Standups, and Retrospectives[cite: 12].</li>
-                <li><strong>Stakeholder Management:</strong> Requirements Gathering, Client Liaison, and Cross-functional Team Coordination[cite: 13].</li>
-                <li><strong>Technical Oversight:</strong> MEAN/MERN, PHP, Python, Flutter, React Native, Kotlin, and Swift[cite: 14].</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Technical Toolkit</h2>
-            <div class="tag-container">
-                <span class="tag">JIRA [cite: 16]</span>
-                <span class="tag">Basecamp [cite: 16]</span>
-                <span class="tag">Trello [cite: 16]</span>
-                <span class="tag">Slack [cite: 17]</span>
-                <span class="tag">Microsoft Teams [cite: 17]</span>
-                <span class="tag">Fiverr [cite: 18]</span>
-                <span class="tag">Upwork [cite: 18]</span>
-            </div>
-        </section>
     </div>
 
-    <section>
-        <h2>Professional Experience</h2>
+    <div class="competencies-grid">
+        <div class="competencies-col">
+            <h3>Core Competencies</h3>
+            <ul class="skill-list">
+                <li><strong>Project Leadership:</strong> Strategic Planning, Milestone Tracking, Risk Mitigation</li>
+                <li><strong>Agile Methodologies:</strong> Scrum, Sprint Planning, Daily Standups, Retrospectives</li>
+                <li><strong>Stakeholder Management:</strong> Requirements Gathering, Client Liaison</li>
+                <li><strong>Technical Oversight:</strong> MEAN/MERN, PHP, Python, Flutter, React Native, Kotlin</li>
+            </ul>
+        </div>
+        <div class="competencies-col">
+            <h3>Technical Toolkit</h3>
+            <ul class="skill-list">
+                <li><strong>Project Management:</strong> JIRA, Basecamp, Trello</li>
+                <li><strong>Team Collaboration:</strong> Slack, Microsoft Teams</li>
+                <li><strong>Market Platforms:</strong> Fiverr, Upwork</li>
+                <li><strong>Quality Assurance:</strong> QA Handoffs, Scope Definition, Output Alignment</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-section">
+        <h2 class="section-title">Professional Experience</h2>
         
-        <div class="experience-item">
-            <div class="item-header">
-                <span class="role">Project Coordinator [cite: 20]</span>
-                <span class="date">June 2024 - Present [cite: 21]</span>
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Project Coordinator</span>
+                    <span class="job-company">| iTechnolabs</span>
+                </div>
+                <span class="job-date">June 2024 – Present</span>
             </div>
-            <div class="company">iTechnolabs [cite: 20]</div>
-            <ul>
-                <li>Direct end-to-end coordination for complex web and mobile projects across modern technology stacks, including MERN and Flutter[cite: 22].</li>
-                <li>Serve as the primary point of contact for clients, defining project scope and successfully aligning technical outputs with overarching business goals[cite: 25].</li>
-                <li>Facilitate critical Agile ceremonies, including Daily Standups, Sprint Retrospectives, and QA handoff sessions, to maintain team alignment[cite: 23].</li>
-                <li>Maintain transparent task tracking and strict timeline control utilizing JIRA and Basecamp[cite: 24].</li>
-                <li class="impact">Key Impact: Quantifiably improved team productivity by transitioning workflows to structured Agile methodologies[cite: 37].</li>
+            <ul class="job-details">
+                <li>Direct end-to-end coordination for complex web and mobile projects across modern technology stacks, including MERN and Flutter.</li>
+                <li>Serve as the primary point of contact for clients, defining project scope and successfully aligning technical outputs with overarching business goals.</li>
+                <li>Facilitate critical Agile ceremonies, including Daily Standups, Sprint Retrospectives, and QA handoff sessions, to maintain team alignment.</li>
+                <li>Maintain transparent task tracking and strict timeline control utilizing JIRA and Basecamp.</li>
             </ul>
+            <div class="impact-statement">
+                Key Impact: Quantifiably improved team productivity by seamlessly transitioning workflows to structured Agile methodologies.
+            </div>
         </div>
 
-        <div class="experience-item">
-            <div class="item-header">
-                <span class="role">Project Coordinator [cite: 26]</span>
-                <span class="date">October 2023 - May 2024 [cite: 27]</span>
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Project Coordinator</span>
+                    <span class="job-company">| BCoder Castle</span>
+                </div>
+                <span class="job-date">October 2023 – May 2024</span>
             </div>
-            <div class="company">BCoder Castle [cite: 26]</div>
-            <ul>
-                <li>Engineered detailed project roadmaps and authored comprehensive client documentation to ensure complete project transparency[cite: 28].</li>
-                <li>Optimized resource allocation to meet aggressive delivery deadlines without compromising product quality[cite: 29].</li>
-                <li class="impact">Key Impact: Successfully delivered 25+ software projects while maintaining a 90% client satisfaction rate[cite: 35].</li>
+            <ul class="job-details">
+                <li>Engineered detailed project roadmaps and authored comprehensive client documentation to ensure complete project transparency.</li>
+                <li>Optimized resource allocation to meet aggressive delivery deadlines without compromising product quality or technical integrity.</li>
             </ul>
+            <div class="impact-statement">
+                Key Impact: Successfully delivered 25+ software projects while maintaining an exceptional 90% client satisfaction rate.
+            </div>
         </div>
 
-        <div class="experience-item">
-            <div class="item-header">
-                <span class="role">Business Development Executive [cite: 30]</span>
-                <span class="date">February 2021 - June 2023 [cite: 31]</span>
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Business Development Executive</span>
+                    <span class="job-company">| ChicMic</span>
+                </div>
+                <span class="job-date">February 2021 – June 2023</span>
             </div>
-            <div class="company">ChicMic [cite: 30]</div>
-            <ul>
-                <li>Spearheaded initial project planning and discovery phases, successfully translating client needs into actionable development plans[cite: 32].</li>
-                <li>Authored compelling technical proposals and supported presales documentation to drive business growth[cite: 33].</li>
-                <li>Nurtured long-term relationships [cite: 32] and managed communications for 40+ international clients[cite: 36].</li>
-                <li class="impact">Key Impact: Client relationship initiatives directly led to a 30% increase in client retention[cite: 36].</li>
+            <ul class="job-details">
+                <li>Spearheaded initial project planning and discovery phases, accurately translating complex client needs into actionable development plans.</li>
+                <li>Authored compelling technical proposals and supported presales documentation to drive continuous business growth.</li>
+                <li>Nurtured long-term relationships and managed strategic communications for a portfolio of 40+ international clients.</li>
             </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="education-item">
-            <div class="item-header">
-                <span class="role">B.Tech in Computer Science Engineering [cite: 39]</span>
-                <span class="date">2021 [cite: 39]</span>
+            <div class="impact-statement">
+                Key Impact: Client relationship initiatives and strategic presales efforts directly led to a 30% increase in overall client retention.
             </div>
-            <div class="company">Maharaja Ranjit Singh Punjab Technical University [cite: 39]</div>
         </div>
-    </section>
+    </div>
+
+    <div class="education-section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-degree">B.Tech in Computer Science Engineering</div>
+        <div class="edu-school">Maharaja Ranjit Singh Punjab Technical University</div>
+        <div class="edu-year">Class of 2021</div>
+    </div>
+
 </div>
 
 </body>
